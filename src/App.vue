@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import routes from "@/config/routes";
+import routes from "@/router/routes";
 
 export default {
   watch: {
