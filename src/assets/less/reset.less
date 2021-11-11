@@ -49,3 +49,18 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0;
   border: 0
 }
+
+// 清除浮动
+.clearfix {
+  &:after {
+    content: "\0020";
+    display: block;
+    clear: both;
+    height: 0;
+  }
+}
+
+// 富文本
+.rich_text {
+  white-space: pre-wrap;
+}

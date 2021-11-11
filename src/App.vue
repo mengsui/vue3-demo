@@ -1,5 +1,10 @@
 <template>
-  <router-view />
+  <router-view v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component" v-if="$route.meta.keepAlive" />
+    </keep-alive>
+    <component :is="Component" v-if="!$route.meta.keepAlive" />
+  </router-view>
 </template>
 
 <script>
@@ -30,4 +35,7 @@ export default {
 
 <style lang="less">
 // 根节点样式
+@import '~@/assets/less/theme.less';
+@import '~@/assets/less/utils.less';
+@import '~@/assets/less/reset.less';
 </style>

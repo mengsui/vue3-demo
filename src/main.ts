@@ -8,10 +8,15 @@ import VueAxios from 'vue-axios'
 
 import VueCookies from 'vue-cookies'
 
+// 导入mock
+require('./mock');
+
 createApp(App)
   .use(store)
   .use(router)
   .use(VueAxios, axios)
   .provide('$cookies', VueCookies)
-  .mount('#app')
-
+  .provide('globalData', {
+    test: '测试'
+  })
+  .mount('#app');

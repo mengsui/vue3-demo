@@ -6,14 +6,21 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "cz-customizable": "^6.3.0",
     "vant": "^3.0.0",
     "vue": "^3.0.0",
     "vue-axios": "^3.3.7",
     "vue-class-component": "^8.0.0-0",
     "vue-cookies": "^1.7.4",
+    "vue-property-decorator": "^9.1.2",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
@@ -28,6 +35,7 @@
     "hard-source-webpack-plugin": "^0.13.1",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "mockjs": "^1.1.0",
     "postcss-px-to-viewport": "^1.1.1",
     "style-resources-loader": "^1.4.1",
     "typescript": "~4.1.5",

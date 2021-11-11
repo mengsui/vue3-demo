@@ -1,25 +1,25 @@
-// import { RouteConfig } from 'vue-router'
-import Home from '@/views/Home.vue'
-
 
 const routers: any[] = [
   {
-    title: '页面标题',
+    title: '',
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import('@/views/home/index.vue'),
     meta: {
       keepAlive: true,
     }
   },
   {
-    title: '页面标题about',
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+    title: '',
+    path: '/details',
+    name: 'Details',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/details/index.vue')
+  },
+  {
+    title: '',
+    path: '/search',
+    name: 'Search',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/search/index.vue')
   }
 ];
 

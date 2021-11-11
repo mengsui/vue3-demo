@@ -12,18 +12,11 @@ const PROXY_LIST = {
   "/dev": {
     target: "http://127.0.0.1:8002",
     changeOrigin: true,
+    // pathRewrite: { '^': '' },
     pathRewrite: {
       "^/dev": ""
     }
   },
-
-  "/pro": {
-    target: "https://show.cool-admin.com",
-    changeOrigin: true,
-    pathRewrite: {
-      "^/pro": "/api"
-    }
-  }
 };
 
 module.exports = {
@@ -50,7 +43,6 @@ module.exports = {
       patterns: [
         path.resolve(__dirname, './src/assets/less/theme.less'),
         path.resolve(__dirname, './src/assets/less/utils.less'),
-        path.resolve(__dirname, './src/assets/less/reset.less')
       ]
     }
   },

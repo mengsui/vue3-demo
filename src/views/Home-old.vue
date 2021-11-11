@@ -40,7 +40,7 @@ import { Search, Icon, Rate } from "vant";
     }, 2000);
   },
 })
-export default class Home extends Vue {
+export default class Homeold extends Vue {
   cookies: any = inject("$cookies");
 
   pageRouter = useRouter();
