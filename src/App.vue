@@ -4,13 +4,18 @@
       <component :is="Component" v-if="$route.meta.keepAlive" />
     </keep-alive>
     <component :is="Component" v-if="!$route.meta.keepAlive" />
+    <Floor />
   </router-view>
 </template>
 
 <script>
 import routes from "@/router/routes";
+import Floor from "@/components/Floor.vue";
 
 export default {
+  components: {
+    Floor,
+  },
   watch: {
     $route(newData) {
       this.handleRouter(newData);

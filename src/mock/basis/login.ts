@@ -16,7 +16,7 @@ export default {
    * @param： {}    
    * @returns：Promise {<pending>}
    **/
-  'post|login': () => {
+  'get|/login': () => {
     return Login
   }
 }

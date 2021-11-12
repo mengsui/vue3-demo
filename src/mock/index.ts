@@ -12,9 +12,9 @@ Mock.setup({
 let configArray: any[] = [];
 
 // 使用webpack的require.context()遍历所有Mock文件
-const files = require.context('.', true, /\.js$/);
+const files = require.context('.', true, /\.ts$/);
 files.keys().forEach((key) => {
-  if (key === './index.js') return;
+  if (key === './index.ts') return;
   configArray = configArray.concat(files(key).default);
 });
 
@@ -22,6 +22,7 @@ files.keys().forEach((key) => {
 configArray.forEach((item) => {
   for (let [path, target] of Object.entries(item)) {
     let protocol = path.split('|');
+    const _path = new RegExp('^' + protocol[1]);
     Mock.mock(new RegExp('^' + protocol[1]), protocol[0], target);
   }
 });

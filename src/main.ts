@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import axios from 'axios'
+import requestConfig from './service/requestConfig';
 import VueAxios from 'vue-axios'
 
 import VueCookies from 'vue-cookies'
@@ -11,10 +11,12 @@ import VueCookies from 'vue-cookies'
 // 导入mock
 require('./mock');
 
-createApp(App)
-  .use(store)
+const app = createApp(App);
+
+app.use(store)
   .use(router)
-  .use(VueAxios, axios)
+  .use(VueAxios, requestConfig)
+  .provide('axios', app.config.globalProperties.axios)
   .provide('$cookies', VueCookies)
   .provide('globalData', {
     test: '测试'

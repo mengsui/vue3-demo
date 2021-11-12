@@ -9,7 +9,7 @@
       indicator-color="white"
     >
       <swipe-item v-for="item in list" :key="item.id">
-        <div class="cookbook_same">
+        <div class="cookbook_same" @click="$emit('onClick', item)">
           <VanImage class="cookbook_same_image" />
           <div class="cookbook_same_title">测试</div>
         </div>

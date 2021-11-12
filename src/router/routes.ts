@@ -20,6 +20,12 @@ const routers: any[] = [
     path: '/search',
     name: 'Search',
     component: () => import(/* webpackChunkName: "about" */ '@/views/search/index.vue')
+  },
+  {
+    title: '',
+    path: '/updata',
+    name: 'Search',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/updata/index.vue')
   }
 ];
 

@@ -13,6 +13,7 @@
           v-for="item in list"
           :key="item"
           :title="item"
+          @click="$emit('onClick', item)"
         >
           <VanImage class="recommend_same_image" />
           <div class="recommend_same_title">测试</div>

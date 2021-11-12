@@ -9,13 +9,10 @@ const isProduction = process.env.NODE_ENV === "production";
 
 // 代理列表
 const PROXY_LIST = {
-  "/dev": {
-    target: "http://127.0.0.1:8002",
+  "/api/": {
+    target: "http://192.168.0.114:7001",
     changeOrigin: true,
-    // pathRewrite: { '^': '' },
-    pathRewrite: {
-      "^/dev": ""
-    }
+    pathRewrite: { '^': '' },
   },
 };
 

@@ -6,8 +6,8 @@
       @onClick="onSearch"
     />
     <MenuList />
-    <Cookbook />
-    <Recommend />
+    <Cookbook @onClick="onLink" />
+    <Recommend @onClick="onLink" />
   </div>
 </template>
 
@@ -31,10 +31,18 @@ import Search from "@/components/Search.vue";
 export default class HomePage extends Vue {
   globalData = inject("globalData");
 
-  mounted() {}
+  mounted() {
+    this.axios.get("/api/get_user2").then((res) => {
+      console.log(res);
+    });
+  }
 
   onSearch() {
     this.$router.push("/search");
+  }
+
+  onLink(item: any) {
+    this.$router.push("/details");
   }
 }
 </script>
